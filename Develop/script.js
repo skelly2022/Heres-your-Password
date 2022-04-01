@@ -6,18 +6,14 @@ var ucharecters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "0123456789";
 var symbols = "!@#$%^&*_-+=";
 
-var choiceChar = "";
-
-
-
 function generatePassword () {
 
+var choiceChar = "";
+
+var length = prompt ("How many charecters in password? \nEnter any # between 8 and 128.");
 
 
-var length = prompt ("How many charecters do you want your password to be? Enter any # between 8-128");
-
-
-var type = prompt ("Special Charecters? \nU = Upercase \nL = Lowercase \nN = Numbers \nS=Special Charecters. \nExample = U,N,S");
+var type = prompt ("Would you like to include Special Charecters? \nU = Upercase \nL = Lowercase \nN = Numbers \nS= Special Charecters \nExample = U,L,N,S or U,S");
 
 
 var typechoices = type.split(",");
@@ -52,10 +48,13 @@ return password;
 function writePassword() {
 
 
+
+
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+
 
 }
 
